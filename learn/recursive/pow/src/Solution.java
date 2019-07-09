@@ -24,6 +24,8 @@ import java.util.stream.IntStream;
  * */
 public class Solution {
 
+
+    ///has some problem
     public double myPow2(double x, int n) {
         if(n==1){
             return x;
@@ -35,7 +37,7 @@ public class Solution {
             return 1;
         }
         double half = myPow2(x, n / 2);
-        return  half * half *(n%2==1?x:1);
+        return  half * half *(n%2==1?(x>0?x:1/x):1);
     }
 
 
@@ -52,15 +54,12 @@ public class Solution {
     }
 
     public double myPow(double x, int n) {
-       for (int i=0;i<=n;i++){
-           x=x*x;
-       }
-       return x;
+            return myPow2(x,n);
     }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        double v = solution.myPow2(2, 0);
+        double v = solution.myPow2(34.00515, -3);
         System.out.println(v);
     }
 
